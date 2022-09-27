@@ -22,11 +22,13 @@ namespace WEB
         Log _log = new Log();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 try
                 {
                     //btnTodos_Click(sender,e);
+                    GuardarVisualizacionUsuario();
                     mostrarTodos();
                 }
                 catch (Exception ex)
@@ -36,6 +38,34 @@ namespace WEB
                 }
             }
         }
+
+        private static void GuardarVisualizacionUsuario()
+        {
+            var dtoVisualizacion = new DtoVisualizacion("Inspeccionar_Catalogo", 
+                DateTime.UtcNow.AddHours(-5), ObtenerDireccionIP());
+
+            var ctrVisualizacion = new CtrVisualizacion();
+            
+            ctrVisualizacion.GuardarVisualizacionUsuario(dtoVisualizacion);
+
+        }
+
+        private static string ObtenerDireccionIP()
+        {
+
+            var context = HttpContext.Current;
+            string direccionIp = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if(!string.IsNullOrEmpty(direccionIp))
+            {
+                string[] direccionesIp = direccionIp.Split(',');
+
+                if (direccionesIp.Length != 0) return direccionesIp.First();
+            }
+
+            return context.Request.ServerVariables["REMOTE_ADDR"];
+        }
+
         //Muestra listado de todas las molduras con su imagen, descripcion, precio y boton detalle
         public void mostrarTodos()
         {

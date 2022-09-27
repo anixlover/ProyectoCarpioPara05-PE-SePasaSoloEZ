@@ -56,6 +56,7 @@
     <Compile Include="DtoTipoMoldura.cs" />
     <Compile Include="DtoTipoUsuario.cs" />
     <Compile Include="DtoUsuario.cs" />
+    <Compile Include="DtoVisualizacion.cs" />
     <Compile Include="Dto_Voucher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

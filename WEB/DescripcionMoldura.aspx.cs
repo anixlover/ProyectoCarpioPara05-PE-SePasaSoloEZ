@@ -30,6 +30,7 @@ namespace WEB
                 if (Request.Params["Id"] != null)
                 {
                     Image1.Visible = true;
+                    GuardarVisualizacionUsuario();
                     obtenerInformacionMoldura(Request.Params["Id"]);
                 }
 
@@ -44,6 +45,34 @@ namespace WEB
                 throw;
             }
         }
+
+        private static void GuardarVisualizacionUsuario()
+        {
+            var dtoVisualizacion = new DtoVisualizacion("Inspeccionar_Catalogo",
+                DateTime.UtcNow.AddHours(-5), ObtenerDireccionIP());
+
+            var ctrVisualizacion = new CtrVisualizacion();
+
+            ctrVisualizacion.GuardarVisualizacionUsuario(dtoVisualizacion);
+
+        }
+
+        private static string ObtenerDireccionIP()
+        {
+
+            var context = HttpContext.Current;
+            string direccionIp = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (!string.IsNullOrEmpty(direccionIp))
+            {
+                string[] direccionesIp = direccionIp.Split(',');
+
+                if (direccionesIp.Length != 0) return direccionesIp.First();
+            }
+
+            return context.Request.ServerVariables["REMOTE_ADDR"];
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Inspeccionar_Catalogo.aspx");

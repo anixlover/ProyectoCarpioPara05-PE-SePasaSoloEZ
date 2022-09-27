@@ -55,6 +55,7 @@
     <Compile Include="CtrSolicitudEstado.cs" />
     <Compile Include="CtrTipoMoldura.cs" />
     <Compile Include="CtrUsuario.cs" />
+    <Compile Include="CtrVisualizacion.cs" />
     <Compile Include="Ctr_Voucher.cs" />
     <Compile Include="CtrSolicitud.cs" />
     <Compile Include="Log.cs" />
