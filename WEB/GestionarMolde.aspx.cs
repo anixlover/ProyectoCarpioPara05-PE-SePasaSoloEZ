@@ -31,6 +31,9 @@ namespace WEB
                 gvMoldes.DataBind();
             }
         }
+
+        
+        
         protected Boolean ValidacionExistencia(int cod)
         {
             objDtoMolde.FK_IM_Cod = cod;
@@ -172,6 +175,13 @@ namespace WEB
                 string id = colsNoVisible[0].ToString();
                 lblId2.Text = id;
             }
+        }
+
+        protected void gvMoldes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMoldes.PageIndex = e.NewPageIndex;
+            gvMoldes.DataSource = objCtrMolde.ListarMoldes();
+            gvMoldes.DataBind();
         }
     }
 }

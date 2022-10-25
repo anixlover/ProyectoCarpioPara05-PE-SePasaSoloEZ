@@ -52,17 +52,19 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
+                                
                             </asp:GridView>                           
                         </div>
                         <br />
-                        <h4 class="page-title">MOLDES</h4>
+                        <h4 class="page-title">MOLfDES</h4>
                         <div class="row">
                             <asp:TextBox ID="txtCodigoMoldura" placeholder="codigo de moldura" runat="server" CssClass="form-control" OnTextChanged="txtCodigoMoldura_TextChanged" pattern="[0-9]+" TextMode="Number" step="1" min="0" AutoPostBack="true" Width="25%"></asp:TextBox>
                             <br />
                         </div>
                         <div class="row">
                             <asp:GridView ID="gvMoldes" runat="server" CssClass="table-borderless table table-bordered table-hover" AutoGenerateColumns="False"
-                                DataKeyNames="FK_IM_Cod" EmptyDataText="No existen registros, agreguen moldes a su catálogo" ShowHeaderWhenEmpty="True" Width="100%" OnRowCommand="gvMoldes_RowCommand">
+                                DataKeyNames="FK_IM_Cod" EmptyDataText="No existen registros, agreguen moldes a su catálogo" ShowHeaderWhenEmpty="True" Width="100%" OnRowCommand="gvMoldes_RowCommand"
+                                AllowPaging="true" PageSize="3" OnPageIndexChanging="gvMoldes_PageIndexChanging">
                                 <Columns>
                                     <asp:BoundField DataField="PK_IML_Cod" HeaderText="Codigo" />
                                     <asp:BoundField DataField="VML_Disponibilidad" HeaderText="Disponibilidad" />
