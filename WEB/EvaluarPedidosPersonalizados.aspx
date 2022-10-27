@@ -26,15 +26,17 @@
     <form id="form1" runat="server" method="POST">
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div class="card">
-            <div class="card-header">
-                Evaluar Pedidos
+        <div class="row">
+             <div class="col-12">
+            <div class="page-title-box pl-0">
+                <h4 class="page-title">EVALUAR PEDIDOS</h4>
             </div>
-            <div class="card-body">
+            <div class="card-box">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                         <asp:GridView ID="gvPersonalizado" runat="server" DataKeyNames="PK_IS_Cod" AutoGenerateColumns="False"
-                            EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover" Width="100%" OnRowCommand="gvPersonalizado_RowCommand">
+                            EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover" Width="100%" OnRowCommand="gvPersonalizado_RowCommand"
+                            AllowPaging="true" PageSize="4" OnPageIndexChanging="gvPersonalizado_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField HeaderText="Imagen">
                                     <ItemTemplate>
@@ -59,6 +61,8 @@
                 </asp:UpdatePanel>
             </div>
         </div>
+        </div>
+       
         <div class="modal fade" id="modalDetalle" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="dialog">
                 <div class="modal-content">

@@ -120,5 +120,12 @@ namespace WEB
                 throw;
             }
         }
+
+        protected void gvPersonalizado_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPersonalizado.PageIndex = e.NewPageIndex;
+            gvPersonalizado.DataSource = objCtrSolicitud.ListarSolicittudesDiseñoPropioEvaluar();
+            gvPersonalizado.DataBind();
+        }
     }
 }

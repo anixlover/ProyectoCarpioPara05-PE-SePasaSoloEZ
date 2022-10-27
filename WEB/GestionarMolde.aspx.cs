@@ -183,5 +183,12 @@ namespace WEB
             gvMoldes.DataSource = objCtrMolde.ListarMoldes();
             gvMoldes.DataBind();
         }
+
+        protected void gvMolduras_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMolduras.PageIndex = e.NewPageIndex;
+            gvMolduras.DataSource = objCtrMoldura.ListarMolduras();
+            gvMolduras.DataBind();
+        }
     }
 }

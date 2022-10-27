@@ -126,5 +126,22 @@ namespace WEB
                 gvCatalogo.DataBind();
             }            
         }
+
+        protected void gvCatalogo_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            string tipo = ddlTipoMoldura.Text;
+            gvCatalogo.PageIndex = e.NewPageIndex;
+
+            if (tipo == "Todos")
+            {
+                gvCatalogo.DataSource = objCtrMoldura.ListarMolduras();
+                gvCatalogo.DataBind();
+            }
+            else
+            {
+                gvCatalogo.DataSource = objCtrTipoMoldura.ListarMoldurasxTipo(objDtoTipoMoldura);
+                gvCatalogo.DataBind();
+            }
+        }
     }
 }

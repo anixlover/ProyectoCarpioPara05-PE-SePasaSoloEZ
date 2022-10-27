@@ -30,10 +30,12 @@
                                 <asp:TextBox ID="txtcodigo" runat="server" placeholder="codigo de moldura" CssClass="form-control" AutoPostBack="True" OnTextChanged="txtcodigo_TextChanged" pattern="[0-9]+" TextMode="Number" step="1" min="0"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="row" style="overflow-y: scroll; overflow-x: hidden; height: 200px; width: 100%;">
+                        <div class="row mt-2" style="overflow-y: hidden; overflow-x: hidden; height: 330px; width: 100%;">
+                            <div class="col-12">
                             <asp:GridView ID="gvMolduras" runat="server" CssClass="table-borderless table table-bordered table-hover"
                                 DataKeyNames="Codigo,T. de Moldura" AutoGenerateColumns="False"
-                                EmptyDataText="No existen registros, agreguen molduras a su catálogo" ShowHeaderWhenEmpty="True" OnRowCommand="gvMolduras_RowCommand">
+                                EmptyDataText="No existen registros, agreguen molduras a su catálogo" ShowHeaderWhenEmpty="True" OnRowCommand="gvMolduras_RowCommand"
+                                AllowPaging="true" PageSize="2" OnPageIndexChanging="gvMolduras_PageIndexChanging">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Imagen">
                                         <ItemTemplate>
@@ -53,15 +55,19 @@
                                     </asp:TemplateField>
                                 </Columns>
                                 
-                            </asp:GridView>                           
+                            </asp:GridView>  
+                            </div>
+                         
                         </div>
                         <br />
-                        <h4 class="page-title">MOLfDES</h4>
+                        <h4 class="page-title">MOLDES</h4>
                         <div class="row">
-                            <asp:TextBox ID="txtCodigoMoldura" placeholder="codigo de moldura" runat="server" CssClass="form-control" OnTextChanged="txtCodigoMoldura_TextChanged" pattern="[0-9]+" TextMode="Number" step="1" min="0" AutoPostBack="true" Width="25%"></asp:TextBox>
-                            <br />
+                            <div class="col">
+                                <asp:TextBox ID="txtCodigoMoldura" placeholder="codigo de moldura" runat="server" CssClass="form-control" OnTextChanged="txtCodigoMoldura_TextChanged" pattern="[0-9]+" TextMode="Number" step="1" min="0" AutoPostBack="true" Width="25%"></asp:TextBox>
+                                <br />
+                            </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-2">
                             <asp:GridView ID="gvMoldes" runat="server" CssClass="table-borderless table table-bordered table-hover" AutoGenerateColumns="False"
                                 DataKeyNames="FK_IM_Cod" EmptyDataText="No existen registros, agreguen moldes a su catálogo" ShowHeaderWhenEmpty="True" Width="100%" OnRowCommand="gvMoldes_RowCommand"
                                 AllowPaging="true" PageSize="3" OnPageIndexChanging="gvMoldes_PageIndexChanging">

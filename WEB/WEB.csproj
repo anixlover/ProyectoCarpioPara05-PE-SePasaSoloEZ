@@ -306,6 +306,7 @@
     <Content Include="assets\js\Aplicacion\UploadFile.js" />
     <Content Include="assets\js\app.js" />
     <Content Include="assets\js\app.min.js" />
+    <Content Include="assets\js\Dashboard\Dashboard.js" />
     <Content Include="assets\js\pages\add-product.init.js" />
     <Content Include="assets\js\pages\animation.init.js" />
     <Content Include="assets\js\pages\apexcharts.init.js" />
@@ -1980,6 +1981,7 @@
     <Content Include="assets\libs\x-editable\jqueryui-editable\js\jqueryui-editable.min.js" />
     <Content Include="assets\Plugins\jquery.min.js" />
     <Content Include="CambiarContraseña.aspx" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Detalles_Solicitud2.aspx" />
     <Content Include="GestionarMolde.aspx" />
     <Content Include="DescripcionMoldura.aspx" />
@@ -2031,6 +2033,13 @@
     </Compile>
     <Compile Include="CambiarContraseña.aspx.designer.cs">
       <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Detalles_Solicitud2.aspx.cs">
       <DependentUpon>Detalles_Solicitud2.aspx</DependentUpon>
