@@ -10,18 +10,16 @@ namespace DTO
     {
         public DtoVisualizacion() {  }
 
-        public DtoVisualizacion(string vS_NombreModulo, DateTime dTS_PrimeraFechaRegistro, string vS_Maquina)
+        public DtoVisualizacion(string vS_NombreModulo, DateTime dTS_FechaRegistro, string vS_Maquina)
         {
             VS_NombreModulo = vS_NombreModulo;
-            DTS_PrimeraFechaRegistro = dTS_PrimeraFechaRegistro;
+            DTS_FechaRegistro = dTS_FechaRegistro;
             VS_Maquina = vS_Maquina;
         }
 
         public int PK_IV_Cod { get; set; }
         public string VS_NombreModulo { get; set; }
-        public DateTime DTS_PrimeraFechaRegistro { get; set; }
-        public DateTime DTS_UltimaFechaRegistro { get; set; }
+        public DateTime DTS_FechaRegistro { get; set; }
         public string VS_Maquina { get; set; }
-        public int IS_Visualizacion { get; set; }
     }
 }

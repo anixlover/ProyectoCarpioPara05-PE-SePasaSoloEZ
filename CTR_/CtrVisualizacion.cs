@@ -1,5 +1,6 @@
 ﻿using DAO_;
 using DTO;
+using DTO.Visualizacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,30 @@ namespace CTR
 
         public void GuardarVisualizacionUsuario(DtoVisualizacion dtoVisualizacion)
         {
-            daoVisualizacion.GuardarVisualizacionUsuario(dtoVisualizacion);
+            try
+            {
+                daoVisualizacion.GuardarVisualizacionUsuario(dtoVisualizacion);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
+
+        public DTOVisualizacionDashboard ObtenerVisualizaciones()
+        {
+            try
+            {
+                return daoVisualizacion.ObtenerVisualizaciones();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
     }
 }
