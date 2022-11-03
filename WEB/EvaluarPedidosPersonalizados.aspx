@@ -36,19 +36,20 @@
                     <ContentTemplate>
                         <asp:GridView ID="gvPersonalizado" runat="server" DataKeyNames="PK_IS_Cod" AutoGenerateColumns="False"
                             EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover" Width="100%" OnRowCommand="gvPersonalizado_RowCommand"
-                            AllowPaging="true" PageSize="4" OnPageIndexChanging="gvPersonalizado_PageIndexChanging">
+                            AllowPaging="true" PageSize="4" OnPageIndexChanging="gvPersonalizado_PageIndexChanging"
+                            HeaderStyle-CssClass="thead-dark">
                             <Columns>
                                 <asp:TemplateField HeaderText="Imagen">
                                     <ItemTemplate>
                                         <img src='ObtenerImegenPersonalizada_2.ashx?id=<%# Eval("PK_IS_Cod")%>' height="60px" width="60px" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="PK_IS_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Código de solicitud" />
-                                <asp:BoundField DataField="VS_TipoSolicitud" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo" />
-                                <asp:BoundField DataField="PK_VU_Dni" ItemStyle-HorizontalAlign="Center" HeaderText="DNI" />
-                                <asp:BoundField DataField="Cliente" ItemStyle-HorizontalAlign="Center" HeaderText="Cliente" />
-                                <asp:BoundField DataField="VSE_Nombre" ItemStyle-HorizontalAlign="Center" HeaderText="Estado" />
-                                <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center">
+                                <asp:BoundField DataField="PK_IS_Cod" HeaderText="Código de solicitud" />
+                                <asp:BoundField DataField="VS_TipoSolicitud" HeaderText="Tipo" />
+                                <asp:BoundField DataField="PK_VU_Dni" HeaderText="DNI" />
+                                <asp:BoundField DataField="Cliente" HeaderText="Cliente" />
+                                <asp:BoundField DataField="VSE_Nombre" HeaderText="Estado" />
+                                <asp:TemplateField HeaderText="Accion">
                                     <ItemTemplate>
                                         <asp:Button runat="server" DataKeyNames="PK_IS_Cod,VSE_Nombre" ID="btnGetDatos" Text="Evaluar" ItemStyle-HorizontalAlign="Center"
                                             Visible='<%# ValidacionEstado(Eval("VSE_Nombre").ToString()) %>'

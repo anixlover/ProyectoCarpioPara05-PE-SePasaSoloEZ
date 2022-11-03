@@ -38,7 +38,7 @@
                                 <asp:GridView ID="gvCatalogo" runat="server" CssClass="table-borderless table table-bordered table-hover"
                                     DataKeyNames="Codigo,T. de Moldura" AutoGenerateColumns="False"
                                     EmptyDataText="No existen registros, agreguen molduras a su catálogo" ShowHeaderWhenEmpty="True" OnRowDataBound="gvCatalogo_RowDataBound" OnRowCommand="gvCatalogo_RowCommand"
-                                    AllowPaging="true" PageSize="5" OnPageIndexChanging="gvCatalogo_PageIndexChanging">
+                                    AllowPaging="true" PageSize="5" OnPageIndexChanging="gvCatalogo_PageIndexChanging" HeaderStyle-CssClass="thead-dark">
                                     <Columns>
                                         <%--<asp:TemplateField HeaderText="Agregar al carrito de compras">
                                         <ItemTemplate>

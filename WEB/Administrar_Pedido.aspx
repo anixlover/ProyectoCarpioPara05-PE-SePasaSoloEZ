@@ -44,7 +44,8 @@
                                     <asp:GridView ID="gvSolicitudes" DataKeyNames="PK_IS_Cod,VSE_Nombre,PK_VU_Dni"
                                         runat="server" AutoGenerateColumns="false" OnRowCommand="gvSolicitudes_RowCommand"
                                         EmptyDataText="No existen registros, agreguen molduras a su catálogo"
-                                        ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover">
+                                        ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover"
+                                        AllowPaging="true" PageSize="10" OnPageIndexChanging="gvSolicitudes_PageIndexChanging" HeaderStyle-CssClass="thead-dark">
                                         <Columns>
                                             <asp:BoundField DataField="PK_IS_Cod" HeaderText="Codigo de solicitud" />
                                             <asp:BoundField DataField="VS_TipoSolicitud" HeaderText="Tipo" />

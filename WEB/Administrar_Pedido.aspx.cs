@@ -130,5 +130,24 @@ namespace WEB
             objCtrPago.AgregarRestante(objDtoPago);
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "mensaje", "swal({type: 'success',title: 'Pedido PAGADO!',text: 'VUELTO A ENTREGAR: S/."+ vuelto + "!!'}).then(cerrarModal())", true);
         }
+
+        protected void gvSolicitudes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            string tipo = ddltipo.Text;
+
+            gvSolicitudes.PageIndex = e.NewPageIndex;
+            
+            if (tipo == "Todos")
+            {
+                gvSolicitudes.DataSource = objCtrSolicitud.ListaSolicitudes();
+                gvSolicitudes.DataBind();
+            }
+            else
+            {
+                gvSolicitudes.DataSource = objCtrSolicitud.Listar_Solicitud_tipo(tipo);
+                gvSolicitudes.DataBind();
+            }
+             
+        }
     }
 }

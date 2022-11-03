@@ -24,11 +24,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="row">
-                                <br />
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-8 col-lg-12 ">
                                 <asp:GridView ID="gvDetalles" runat="server" CssClass="table-borderless table table-bordered table-hover" DataKeyNames="PK_IM_Cod" AutoGenerateColumns="False"
-                                    EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" Width="90%">
+                                    EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" Width="100%"
+                                    HeaderStyle-CssClass="thead-dark">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Imagen">
                                             <ItemTemplate>
@@ -57,21 +56,10 @@
                                         <asp:BoundField DataField="DS_ImporteTotal" HeaderText="Importe total" />--%>
                                     </Columns>
                                 </asp:GridView>
-                            </div>
                         </div>
-                        <div class="card-box">
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-12 ">
                             <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="3600"></asp:ScriptManager>
-                            <div class="body table-responsive">
-                                <%--<div class="header">
-                    <h2>Administrar Pedidos
-                                <small></small>
-                    </h2>
-                    <ul class="header-dropdown m-r--5">
-                    </ul>
-                </div>--%>
-                                <%--<input type="hidden" runat="server" id="valorObtenido" clientidmode="Static" />--%>
-                                <div class="card">
-                                    <div class="body">
+                                    <div>
                                         <%--Imagen del producto--%>
                                         <div class="tab-content pt-0">
                                             <div class="tab-pane active show" id="product-1-item">
@@ -117,15 +105,12 @@
                                         </button>
                                         <%--end boton regresar--%>
                                     </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                 </div>
             </div>
-        </div>
-    </div>
-
+         </div>
+      </div>
     
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>

@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col-12 pl-0">
                                     <asp:GridView ID="gvVentas" runat="server" CssClass="table-borderless table table-bordered table-hover" AutoGenerateColumns="False"
-                                    EmptyDataText="No existen registros!" ShowHeaderWhenEmpty="True">
+                                    EmptyDataText="No existen registros!" ShowHeaderWhenEmpty="True" HeaderStyle-CssClass="thead-dark">
                                     <Columns>
                                         <asp:BoundField DataField="PK_IS_Cod" HeaderText="Codigo" />
                                         <asp:BoundField DataField="VS_TipoSolicitud" HeaderText="Tipo" />
