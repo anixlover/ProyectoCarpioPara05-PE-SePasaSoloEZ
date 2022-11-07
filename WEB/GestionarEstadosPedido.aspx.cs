@@ -363,5 +363,12 @@ namespace WEB
             CargarMolduras(lblid.Text);
             UpdatePanel2.Update();
         }
+
+        protected void gvPedidos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPedidos.PageIndex = e.NewPageIndex;
+            gvPedidos.DataSource = objCtrSolicitud.ListarSolicitudesTrabajdor();
+            gvPedidos.DataBind();
+        }
     }
 }

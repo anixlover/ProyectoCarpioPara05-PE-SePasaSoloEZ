@@ -44,7 +44,8 @@
                             <asp:GridView ID="gvCarrito"
                                 DataKeyNames="PK_IMU_Cod,VM_Descripcion,VTM_Nombre,IMU_Cantidad,DMU_Precio,FK_IM_Cod" runat="server" AutoGenerateColumns="False"
                                 EmptyDataText="No existen registros, agreguen molduras a su carrito" ShowHeaderWhenEmpty="True"
-                                OnRowCommand="gvCarrito_RowCommand" CssClass="table-borderless table table-bordered table-hover">
+                                OnRowCommand="gvCarrito_RowCommand" CssClass="table-borderless table table-bordered table-hover"
+                                HeaderStyle-CssClass="thead-dark" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvCarrito_PageIndexChanging">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Imagen">
                                         <ItemTemplate>

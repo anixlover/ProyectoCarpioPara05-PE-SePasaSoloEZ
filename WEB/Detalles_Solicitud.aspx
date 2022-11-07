@@ -32,7 +32,8 @@
                                     <%--Codigo , Descripcion , Precio , Estado--%>
                                     <asp:GridView ID="gvDetalleSolicitud" runat="server" AutoGenerateColumns="false"
                                         EmptyDataText="No existen registros!"
-                                        ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover">
+                                        ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover"
+                                        HeaderStyle-CssClass="thead-dark">
                                         <Columns>
                                             <asp:BoundField DataField="PK_IM_Cod" HeaderText="Codigo Moldura" />
                                             <asp:BoundField DataField="VM_Descripcion" HeaderText="Descripcion Moldura" />

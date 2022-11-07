@@ -12,7 +12,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
-        <div class="row">
+        <div class="row table-responsive">
             <div class="col-12">
                 <div class="page-title-box">
                     <h4 class="page-title">REPORTE DE STOCK DE MOLDURAS</h4>
@@ -21,8 +21,9 @@
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                     <asp:GridView ID="gvMolduras" runat="server" CssClass="table-borderless table table-bordered table-hover"
                         DataKeyNames="Codigo,T. de Moldura" AutoGenerateColumns="False"
-                        EmptyDataText="No existen registros, agreguen molduras a su catálogo" ShowHeaderWhenEmpty="True">
-
+                        EmptyDataText="No existen registros, agreguen molduras a su catálogo" ShowHeaderWhenEmpty="True"
+                        HeaderStyle-CssClass="thead-dark"  AllowPaging="true" PageSize="5"
+                        OnPageIndexChanging="gvMolduras_PageIndexChanging">
                         <Columns>
                             <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
                             <asp:BoundField DataField="T. de Moldura" HeaderText="T. de Moldura" />
@@ -33,7 +34,7 @@
                             <asp:BoundField DataField="Estado" HeaderText="Estado" />
                         </Columns>
                     </asp:GridView>
-                    <asp:Button ID="btnExport" runat="server" Text="Export To PDF" OnClick = "ExportToPDF" /> />
+                    <asp:Button ID="btnExport" CssClass="btn btn-danger" runat="server" Text="Export To PDF" OnClick = "ExportToPDF" /> 
                 </div>
             </div>
         </div>

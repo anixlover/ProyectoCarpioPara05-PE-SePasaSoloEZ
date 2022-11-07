@@ -51,7 +51,7 @@
                                 <asp:BoundField DataField="VSE_Nombre" HeaderText="Estado" />
                                 <asp:TemplateField HeaderText="Accion">
                                     <ItemTemplate>
-                                        <asp:Button runat="server" DataKeyNames="PK_IS_Cod,VSE_Nombre" ID="btnGetDatos" Text="Evaluar" ItemStyle-HorizontalAlign="Center"
+                                        <asp:Button runat="server" DataKeyNames="PK_IS_Cod,VSE_Nombre" ID="btnGetDatos" Text="Evaluar" 
                                             Visible='<%# ValidacionEstado(Eval("VSE_Nombre").ToString()) %>'
                                             CommandName="Evaluar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-soft-blue" data-toggle="modal" data-target="#modalDetalle" />
                                     </ItemTemplate>

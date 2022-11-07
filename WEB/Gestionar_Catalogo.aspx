@@ -60,12 +60,12 @@
                                         <asp:BoundField DataField="Estado" HeaderText="Estado" />
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button ID="btnGetMoldura" Text="🔍" class="btn btn-sm btn-warning"
+                                                <asp:Button ID="btnGetMoldura" Text="Consultar" class="btn btn-sm btn-warning"
                                                     CommandArgument="<%# Container.DataItemIndex %>" CommandName="getMoldura"
                                                     runat="server" data-toggle="modal" data-target="#modalDetalle" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:ButtonField ButtonType="Button" AccessibleHeaderText="btnActualizar" Text="✏️" CommandName="Actualizar">
+                                        <asp:ButtonField ButtonType="Button" AccessibleHeaderText="btnActualizar" Text="Modificar" CommandName="Actualizar">
                                             <ControlStyle CssClass="btn btn-sm btn-blue" />
                                         </asp:ButtonField>
                                     </Columns>

@@ -288,5 +288,14 @@ namespace WEB
             Session["idMoldura"] = txtcodM.Text;
             //Response.Redirect("~/RealizarPedidoPersonalizado.aspx");
         }
+
+        protected void gvCarrito_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            
+            objDtoMXU.FK_VU_Dni = Session["DNIUsuario"].ToString();
+            gvCarrito.PageIndex = e.NewPageIndex;
+            gvCarrito.DataSource = objCtrMXU.listarMoldurasxusuario(objDtoMXU);
+            gvCarrito.DataBind();
+        }
     }
 }

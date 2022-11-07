@@ -17,26 +17,29 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="3600"></asp:ScriptManager>
-        <div class="card">
-            <div class="card-header">
-                Gestionar Estados de Pedidos
-            </div>
-            <div class="card-body">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <div class="row">
+            <div class="col-12">
+               <div class="page-title-box">
+                    <h4 class="page-title">GESTIONAR ESTADOS DE PEDIDOS</h4>
+                </div>
+                <div class="card-box">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
-                        <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover" Width="100%" OnRowCommand="gvPedidos_RowCommand">
+                        <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover"
+                            Width="100%" OnRowCommand="gvPedidos_RowCommand"
+                            HeaderStyle-CssClass="thead-dark" AllowPaging="true" PageSize="7" OnPageIndexChanging="gvPedidos_PageIndexChanging">
                             <Columns>
-                                <asp:BoundField DataField="PK_IS_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Codigo de solicitud" />
-                                <asp:BoundField DataField="VS_TipoSolicitud" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo" />
-                                <asp:BoundField DataField="DTS_FechaRegistro" ItemStyle-HorizontalAlign="Center" HeaderText="Fecha de Registro" />
-                                <asp:BoundField DataField="DTS_FechaRecojo" ItemStyle-HorizontalAlign="Center" HeaderText="Fecha de Recojo" />
-                                <asp:BoundField DataField="DS_ImporteTotal" ItemStyle-HorizontalAlign="Center" HeaderText="Importe" />
-                                <asp:BoundField DataField="FK_VU_Dni" ItemStyle-HorizontalAlign="Center" HeaderText="Dni del cliente" />
-                                <asp:BoundField DataField="Nombre" ItemStyle-HorizontalAlign="Center" HeaderText="Nombre y apellido" />
-                                <asp:BoundField DataField="VSE_Nombre" ItemStyle-HorizontalAlign="Center" HeaderText="Estado" />
-                                <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center">
+                                <asp:BoundField DataField="PK_IS_Cod" HeaderText="Codigo de solicitud" />
+                                <asp:BoundField DataField="VS_TipoSolicitud" HeaderText="Tipo" />
+                                <asp:BoundField DataField="DTS_FechaRegistro" HeaderText="Fecha de Registro" />
+                                <asp:BoundField DataField="DTS_FechaRecojo"  HeaderText="Fecha de Recojo" />
+                                <asp:BoundField DataField="DS_ImporteTotal"  HeaderText="Importe" />
+                                <asp:BoundField DataField="FK_VU_Dni"  HeaderText="Dni del cliente" />
+                                <asp:BoundField DataField="Nombre"  HeaderText="Nombre y apellido" />
+                                <asp:BoundField DataField="VSE_Nombre"  HeaderText="Estado" />
+                                <asp:TemplateField HeaderText="Accion" >
                                     <ItemTemplate>
-                                        <asp:Button runat="server" Text="Ver Detalles" ItemStyle-HorizontalAlign="Center" data-toggle="modal" data-target="#modalDetalle"
+                                        <asp:Button runat="server" Text="Ver Detalles"  data-toggle="modal" data-target="#modalDetalle"
                                             CommandName="Ver detalles" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -44,6 +47,7 @@
                         </asp:GridView>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+                </div>
             </div>
         </div>
         <div class="modal fade bd-example-modal-xl" id="modalDetalle" tabindex="-1" role="dialog">
@@ -57,21 +61,24 @@
                         <asp:Label ID="lblid" runat="server" Text="0"></asp:Label>
                                 </p>
                             </div>
-                            <asp:GridView ID="gvPersonalizado" runat="server" DataKeyNames="PK_IMU_Cod" AutoGenerateColumns="False"
-                                EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover" Width="100%" OnRowCommand="gvPersonalizado_RowCommand" OnRowDataBound="gvPersonalizado_RowDataBound">
+                            <div class="modal-body">
+                                   <asp:GridView ID="gvPersonalizado" runat="server" DataKeyNames="PK_IMU_Cod" AutoGenerateColumns="False"
+                                EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" CssClass="table-borderless table table-bordered table-hover" Width="100%"
+                                OnRowCommand="gvPersonalizado_RowCommand" OnRowDataBound="gvPersonalizado_RowDataBound"
+                                HeaderStyle-CssClass="thead-dark">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Imagen">
                                         <ItemTemplate>
                                             <img src='ObtenerImegenPersonalizada_2.ashx?id=<%# Eval("PK_IS_Cod")%>' height="60px" width="60px" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="PK_IMU_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Código" />
-                                    <asp:BoundField DataField="PK_IS_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Código de solicitud" />
-                                    <asp:BoundField DataField="DS_Largo" ItemStyle-HorizontalAlign="Center" HeaderText="Largo" />
-                                    <asp:BoundField DataField="DS_Ancho" ItemStyle-HorizontalAlign="Center" HeaderText="Ancho" />
-                                    <asp:BoundField DataField="VS_Comentario" ItemStyle-HorizontalAlign="Center" HeaderText="Comentario" />
-                                    <asp:BoundField DataField="IS_Cantidad" ItemStyle-HorizontalAlign="Center" HeaderText="Cantidad" />                             
-                                    <asp:BoundField DataField="FK_IMXUE_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Estado" />
+                                    <asp:BoundField DataField="PK_IMU_Cod"  HeaderText="Código" />
+                                    <asp:BoundField DataField="PK_IS_Cod"  HeaderText="Código de solicitud" />
+                                    <asp:BoundField DataField="DS_Largo"  HeaderText="Largo" />
+                                    <asp:BoundField DataField="DS_Ancho"  HeaderText="Ancho" />
+                                    <asp:BoundField DataField="VS_Comentario"  HeaderText="Comentario" />
+                                    <asp:BoundField DataField="IS_Cantidad"  HeaderText="Cantidad" />                             
+                                    <asp:BoundField DataField="FK_IMXUE_Cod"  HeaderText="Estado" />
                                     <asp:TemplateField HeaderText="Cambiar Estado">
                                         <ItemTemplate>
                                             <asp:DropDownList ID="ddlEstados2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEstados2_SelectedIndexChanged"></asp:DropDownList>
@@ -84,7 +91,7 @@
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                            <br />
+                                 <br />
                             <asp:GridView ID="gvDetalles" runat="server" DataKeyNames="PK_IMU_Cod" AutoGenerateColumns="False"
                                 EmptyDataText="No existen registros" ShowHeaderWhenEmpty="True" Width="100%" CssClass="table-borderless table table-bordered table-hover" OnRowDataBound="gvDetalles_RowDataBound" OnRowCommand="gvDetalles_RowCommand">
                                 <Columns>
@@ -93,11 +100,11 @@
                                             <img src='ObtieneImagen.ashx?id=<%# Eval("PK_IM_Cod")%>' height="80px" width="80px" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="PK_IMU_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Código" />
-                                    <asp:BoundField DataField="PK_IM_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Código de Moldura" />
-                                    <asp:BoundField DataField="VTM_Nombre" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo de Moldura" />
-                                    <asp:BoundField DataField="IMU_Cantidad" ItemStyle-HorizontalAlign="Center" HeaderText="Cantidad" />
-                                    <asp:BoundField DataField="FK_IMXUE_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Estado" />
+                                    <asp:BoundField DataField="PK_IMU_Cod"  HeaderText="Código" />
+                                    <asp:BoundField DataField="PK_IM_Cod"  HeaderText="Código de Moldura" />
+                                    <asp:BoundField DataField="VTM_Nombre"  HeaderText="Tipo de Moldura" />
+                                    <asp:BoundField DataField="IMU_Cantidad"  HeaderText="Cantidad" />
+                                    <asp:BoundField DataField="FK_IMXUE_Cod"  HeaderText="Estado" />
                                     <asp:TemplateField HeaderText="Cambiar Estado">
                                         <ItemTemplate>
                                             <asp:DropDownList ID="ddlEstados" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEstados_SelectedIndexChanged"></asp:DropDownList>
@@ -108,25 +115,26 @@
                                             <asp:Label ID="lblCantMoldes" runat="server" Text='<%#CantidadMolde(Eval("PK_IM_Cod").ToString())%>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="IMU_MoldesUsados" ItemStyle-HorizontalAlign="Center" HeaderText="Moldes usados" />
+                                    <asp:BoundField DataField="IMU_MoldesUsados"  HeaderText="Moldes usados" />
                                     <asp:TemplateField HeaderText="Acción">
                                         <ItemTemplate>
-                                            <asp:Button runat="server" Text="Asignar Moldes" ItemStyle-HorizontalAlign="Center" data-toggle="modal" data-target="#modalCantidadMoldes"
+                                            <asp:Button runat="server" Text="Asignar Moldes"  data-toggle="modal" data-target="#modalCantidadMoldes"
                                                 Visible='<%# ExistenMoldes(int.Parse(Eval("PK_IM_Cod").ToString()),int.Parse(Eval("PK_IMU_Cod").ToString())) %>' CommandName="Asignar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning" />
-                                            <asp:Button ID="btnDevolver" runat="server" Text="Devolver Moldes" ItemStyle-HorizontalAlign="Center" Visible='<%#HayMoldesEnUso(int.Parse(Eval("PK_IMU_Cod").ToString())) %>' CommandArgument='<%# Container.DataItemIndex %>' CommandName="Devolver" CssClass="btn btn-primary" />
+                                            <asp:Button ID="btnDevolver" runat="server" Text="Devolver Moldes"  Visible='<%#HayMoldesEnUso(int.Parse(Eval("PK_IMU_Cod").ToString())) %>' CommandArgument='<%# Container.DataItemIndex %>' CommandName="Devolver" CssClass="btn btn-primary" />
                                             <asp:Button ID="btnIncidentes" runat="server" Text="Qué ocurrió?" Visible='<%# Incidente(Eval("FK_IMXUE_Cod").ToString()) %>' data-toggle="modal" data-target="#modalIncidendia" CommandArgument='<%# Container.DataItemIndex %>' CommandName="Incidencia" CssClass="btn btn-primary"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                            <div class="row-lg">
-                                <div class="col">
-                                <asp:Button ID="btnComenzar" runat="server" Text="Comenzar" CssClass="btn-lg btn-success" OnClick="btnComenzar_Click" />
-                                    </div>
-                                <div class="col">
-                                    <asp:Button ID="btnGuardar" runat="server" CssClass="btn-lg btn-success" Text="Guardar" OnClick="btnGuardar_Click"/>
+                            <div class="row justify-content-end">
+                            <div class="col text-right">
+                            <asp:Button ID="btnComenzar" runat="server" Text="Comenzar" CssClass="btn-lg btn-success" OnClick="btnComenzar_Click" />
                                 </div>
+                            <div class="col text-right">
+                                <asp:Button ID="btnGuardar" runat="server" CssClass="btn-lg btn-success" Text="Guardar" OnClick="btnGuardar_Click"/>
                             </div>
+                            </div>
+                           </div>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>

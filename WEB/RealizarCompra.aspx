@@ -83,11 +83,11 @@
                                                 <img src='ObtieneImagen.ashx?id=<%# Eval("PK_IM_Cod")%>' height="80px" width="80px" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="PK_IM_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Coóigo de Moldura" />
-                                        <asp:BoundField DataField="VM_Descripcion" ItemStyle-HorizontalAlign="Center" HeaderText="Descripción de Moldura" />
-                                        <asp:BoundField DataField="VTM_Nombre" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo de Moldura" />
-                                        <asp:BoundField DataField="IMU_Cantidad" ItemStyle-HorizontalAlign="Center" HeaderText="Cantidad" />
-                                        <asp:BoundField DataField="DMU_Precio" ItemStyle-HorizontalAlign="Center" HeaderText="Precio" />
+                                        <asp:BoundField DataField="PK_IM_Cod"  HeaderText="Coóigo de Moldura" />
+                                        <asp:BoundField DataField="VM_Descripcion"  HeaderText="Descripción de Moldura" />
+                                        <asp:BoundField DataField="VTM_Nombre"  HeaderText="Tipo de Moldura" />
+                                        <asp:BoundField DataField="IMU_Cantidad"  HeaderText="Cantidad" />
+                                        <asp:BoundField DataField="DMU_Precio"  HeaderText="Precio" />
                                     </Columns>
                                 </asp:GridView>
                             </div>
@@ -100,12 +100,12 @@
                                                 <img src='ObtenerImegenPersonalizada_2.ashx?id=<%# Eval("PK_IS_Cod")%>' height="60px" width="60px" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="PK_IS_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Código de solicitud" />
-                                        <asp:BoundField DataField="DS_Largo" ItemStyle-HorizontalAlign="Center" HeaderText="Largo" />
-                                        <asp:BoundField DataField="DS_Ancho" ItemStyle-HorizontalAlign="Center" HeaderText="Ancho" />
-                                        <asp:BoundField DataField="VS_Comentario" ItemStyle-HorizontalAlign="Center" HeaderText="Cometario" />
-                                        <asp:BoundField DataField="IS_Cantidad" ItemStyle-HorizontalAlign="Center" HeaderText="Cantidad" />
-                                        <asp:BoundField DataField="DS_ImporteTotal" ItemStyle-HorizontalAlign="Center" HeaderText="Precio (S/.)" />
+                                        <asp:BoundField DataField="PK_IS_Cod"  HeaderText="Código de solicitud" />
+                                        <asp:BoundField DataField="DS_Largo"  HeaderText="Largo" />
+                                        <asp:BoundField DataField="DS_Ancho"  HeaderText="Ancho" />
+                                        <asp:BoundField DataField="VS_Comentario"  HeaderText="Cometario" />
+                                        <asp:BoundField DataField="IS_Cantidad"  HeaderText="Cantidad" />
+                                        <asp:BoundField DataField="DS_ImporteTotal"  HeaderText="Precio (S/.)" />
                                     </Columns>
                                 </asp:GridView>
                             </div>

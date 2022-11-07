@@ -35,7 +35,8 @@
                             <asp:GridView ID="gvMolduras" runat="server" CssClass="table-borderless table table-bordered table-hover"
                                 DataKeyNames="Codigo,T. de Moldura" AutoGenerateColumns="False"
                                 EmptyDataText="No existen registros, agreguen molduras a su catálogo" ShowHeaderWhenEmpty="True" OnRowCommand="gvMolduras_RowCommand"
-                                AllowPaging="true" PageSize="2" OnPageIndexChanging="gvMolduras_PageIndexChanging">
+                                AllowPaging="true" PageSize="2" OnPageIndexChanging="gvMolduras_PageIndexChanging"
+                                HeaderStyle-CssClass="thead-dark">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Imagen">
                                         <ItemTemplate>
@@ -47,9 +48,9 @@
                                     <asp:BoundField DataField="Largo" HeaderText="Largo" />
                                     <asp:BoundField DataField="Ancho" HeaderText="Ancho" />
                                     <asp:BoundField DataField="U. Metrica" HeaderText="U. Metrica" />
-                                    <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center">
+                                    <asp:TemplateField HeaderText="Accion" >
                                         <ItemTemplate>
-                                            <asp:Button runat="server" Text="Agregar Molde" ItemStyle-HorizontalAlign="Center" data-toggle="modal" data-target="#modalAsingar"
+                                            <asp:Button runat="server" Text="Agregar Molde"  data-toggle="modal" data-target="#modalAsingar"
                                                 Visible='<%# ValidacionExistencia(int.Parse(Eval("Codigo").ToString())) %>' CommandName="Agregar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -67,10 +68,11 @@
                                 <br />
                             </div>
                         </div>
-                        <div class="row mt-2">
+                        <div class="row mt-2 pl-2">
                             <asp:GridView ID="gvMoldes" runat="server" CssClass="table-borderless table table-bordered table-hover" AutoGenerateColumns="False"
                                 DataKeyNames="FK_IM_Cod" EmptyDataText="No existen registros, agreguen moldes a su catálogo" ShowHeaderWhenEmpty="True" Width="100%" OnRowCommand="gvMoldes_RowCommand"
-                                AllowPaging="true" PageSize="3" OnPageIndexChanging="gvMoldes_PageIndexChanging">
+                                AllowPaging="true" PageSize="3" OnPageIndexChanging="gvMoldes_PageIndexChanging"
+                                HeaderStyle-CssClass="thead-dark">
                                 <Columns>
                                     <asp:BoundField DataField="PK_IML_Cod" HeaderText="Codigo" />
                                     <asp:BoundField DataField="VML_Disponibilidad" HeaderText="Disponibilidad" />
@@ -78,7 +80,7 @@
                                     <asp:BoundField DataField="FK_IM_Cod" HeaderText="Codigo de Moldura" />
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:Button ID="btnAumentar" runat="server" Text="➕" CssClass="btn btn-primary" data-toggle="modal" data-target="#modalCantidad" CommandName="Aumentar" CommandArgument='<%# Container.DataItemIndex %>'/>
+                                            <asp:Button ID="btnAumentar" runat="server" Text="Añadir" CssClass="btn btn-primary" data-toggle="modal" data-target="#modalCantidad" CommandName="Aumentar" CommandArgument='<%# Container.DataItemIndex %>'/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

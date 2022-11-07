@@ -34,11 +34,11 @@
                                                 <img src='ObtieneImagen.ashx?id=<%# Eval("PK_IM_Cod")%>' height="80px" width="80px" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="PK_IM_Cod" ItemStyle-HorizontalAlign="Center" HeaderText="Codigo de Moldura" />
-                                        <asp:BoundField DataField="VM_Descripcion" ItemStyle-HorizontalAlign="Center" HeaderText="Descripción de Moldura" />
-                                        <asp:BoundField DataField="VTM_Nombre" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo de Moldura" />
-                                        <asp:BoundField DataField="IMU_Cantidad" ItemStyle-HorizontalAlign="Center" HeaderText="Cantidad" />
-                                        <asp:BoundField DataField="DMU_Precio" ItemStyle-HorizontalAlign="Center" HeaderText="Precio" />
+                                        <asp:BoundField DataField="PK_IM_Cod"  HeaderText="Codigo de Moldura" />
+                                        <asp:BoundField DataField="VM_Descripcion"  HeaderText="Descripción de Moldura" />
+                                        <asp:BoundField DataField="VTM_Nombre"  HeaderText="Tipo de Moldura" />
+                                        <asp:BoundField DataField="IMU_Cantidad"  HeaderText="Cantidad" />
+                                        <asp:BoundField DataField="DMU_Precio"  HeaderText="Precio" />
                                     </Columns>
                                 </asp:GridView>
 
